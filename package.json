@@ -1,0 +1,41 @@
+{
+  "name": "mcp-rag-template",
+  "version": "1.0.0",
+  "description": "MCP Server Template with RAG (ChromaDB) - Clone and customize for your domain",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "embed": "tsx src/scripts/embed.ts",
+    "lint": "eslint src/",
+    "clean": "rimraf dist"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "rag",
+    "chromadb",
+    "ai",
+    "llm"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "chromadb": "^1.9.2",
+    "chromadb-default-embed": "^2.13.2",
+    "dotenv": "^16.3.1",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "rimraf": "^5.0.5",
+    "tsx": "^4.6.0",
+    "typescript": "^5.3.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

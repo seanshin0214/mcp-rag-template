@@ -88,7 +88,11 @@ export async function addDocument(
 export async function listCollections(): Promise<string[]> {
   const chromaClient = await getChromaClient();
   const collections = await chromaClient.listCollections();
-  return collections.map((c) => c.name);
+  return collections.map((c: unknown) => {
+    if (typeof c === "string") return c;
+    if (c && typeof c === "object" && "name" in c) return (c as { name: string }).name;
+    return String(c);
+  });
 }
 
 // Types
